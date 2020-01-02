@@ -1,0 +1,55 @@
+<div class="container" style="background-color: rgb(236, 241, 234)">
+
+
+<!-- Section: Blog v.3 -->
+<section class="my-5" *ngIf="blogs.articles.length > 18">
+
+    <!-- Section heading -->
+    <h2 class="h1-responsive font-weight-bold text-center my-5">Recent News</h2>
+    <!-- Section description -->
+    <p class="text-center dark-grey-text w-responsive mx-auto mb-5">Duis aute irure dolor in reprehenderit in
+      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  
+    <!-- Grid row -->
+    <div class="row" *ngFor="let blog of blogs?.articles">
+  
+      <!-- Grid column -->
+      <div class="col-lg-5 col-xl-4">
+  
+        <!-- Featured image -->
+        <div class="view overlay rounded z-depth-1-half mb-lg-0 mb-4">
+          <img class="img-fluid" src="{{blog?.urlToImage}}" alt="Sample image">
+          <a>
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+  
+      </div>
+      <!-- Grid column -->
+  
+      <!-- Grid column -->
+      <div class="col-lg-7 col-xl-8">
+  
+        <!-- Post title -->
+        <h3 class="font-weight-bold mb-3" style="color: #181860;"><strong> {{blog?.title}} </strong></h3>
+        <!-- Excerpt -->
+        <p class="dark-grey-text">{{blog?.description}}</p>
+        <!-- Post data -->
+        <p>by <a class="font-weight-bold">{{blog?.author}}</a>, {{blog?.publishedAt}}</p>
+        <!-- Read more button -->
+        <a class="btn btn-success btn-md" (click)="goto(blog?.title, blog?.author, blog?.content, blog?.description, blog?.publishedAt, blog?.url, blog?.urlToImage, blog?.source?.name)">Read more</a>
+  
+      </div>
+      <!-- Grid column --> 
+      <hr class="my-5">
+      <p>&nbsp;</p>
+    </div>
+    <!-- Grid row -->
+  
+    <hr class="my-5">
+  
+   
+  </section>
+  <!-- Section: Blog v.3 -->
+</div>
